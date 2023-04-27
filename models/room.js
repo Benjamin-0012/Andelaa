@@ -2,6 +2,7 @@ class Room {
     oldName = ''
     members = []
     maxMembers = 0
+    currentNumberOfMembers = this.members.length
     constructor(name) {
         this.name = name;
     }
@@ -20,6 +21,14 @@ class Room {
     renameRoom(name) {
         this.oldName = this.name,
         this.name = name
+    }
+
+    isFull() {
+        return this.maxMembers === this.members.length;
+    }
+
+    addPerson(person) {
+        this.members.push(person)
     }
 
 }

@@ -1,8 +1,7 @@
 const Person = require('./person');
+class Staff extends Person {
+}
 
-module.exports = class Staff extends Person {
-    constructor(office, livingspace){
-        this.office = office;
-        this.livingspace = livingspace;
-    }
+module.exports = {
+    Staff
 }

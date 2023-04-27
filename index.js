@@ -45,16 +45,21 @@ app.delete('/room/:name', (req, res) => {
 })
 
 
-
-app.post('/add_person', (req, res) => {
-  res.send('Person added')
-})
-
 app.get('/rooms', (req, res) => {
-  console.log(dojo, dojo.rooms)
   rooms = dojo.rooms.map(room => room.name);
 
   res.send(`${rooms.join(' ,')} rooms available`)
 })
 
+app.post('/add_person', (req, res) => {
+  person = dojo.addPerson(req.body.firstName, req.body.lastName, req.body.type, req.body.wantsAccomodation);
+  res.send({msg: person})
+})
+
+app.post('/print_room/:roomName', (req, res) => {
+  print = dojo.printRoom(req.params.roomName);
+  res.send(print)
+})
+
 app.listen(port, () => {console.log(`Running on port: ${port}`)});
+

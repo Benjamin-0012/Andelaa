@@ -1,12 +1,11 @@
 module.exports = class Person {
-    persons = [];
-    constructor(staff, fellow){
-        this.staff = staff;
-        this.fellow = fellow;
+    office
+    constructor(firstName, lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    addPerson(name, number_of_people) {
-        let person = number_of_people === 'office' ? new Office(name) : new Livingspace(name);
-        this.persons.push(person)
-        return `name: ${name}, number_of_people: ${number_of_people}`
+
+    addOffice(office) {
+        this.office = office;
     }
 }
