@@ -33,12 +33,12 @@ class Dojo {
             else {
                 let room = type === 'office' ? new Office(name) : new Livingspace(name);
                 this.rooms.push({name, type, room})
-                // x = {
-                //     name: name,
-                //     type: type,
-                //     room: room
-                // }
-                this.rooms.push(x)
+                /*x = {
+                    name: name,
+                    type: type,
+                    room: room
+                }
+                this.rooms.push(x)*/
                 createdRooms.push(name)
             }
         })
@@ -50,7 +50,7 @@ class Dojo {
         // let room = type === 'office' ? new Office(name) : new Livingspace(name);
         // this.roomDictionary[name.toLowerCase()] = {name, type, room}
         // console.log(this.roomDictionary)
-        return `An ${type} called ${name} has been successfully created!`
+        // return `An ${type} called ${name} has been successfully created!`
     }
     renameRoom(oldname, newname) {
         let renameRoom
@@ -111,7 +111,7 @@ class Dojo {
         // console.log(this.persons)
         return `${firstName} ${lastName} created successfully`; 
     }
-    printRoom(roomName){
+    printRoom(roomName) {
         let roomIndex;
         let roomExists = false;
         this.rooms.forEach((room, index) => {
@@ -129,6 +129,25 @@ class Dojo {
         
 
         return { msg: `${roomName} printed succesfully. Printed number of rooms is ${this.rooms.length}`}
+    }
+    printAllocation(members) {
+        let roomIndex;
+        let roomExists = false;
+        this.rooms.forEach((room, index) => {
+            if(room.name.toLowerCase() == roomName.toLowerCase()) {
+                roomIndex = index;
+                roomExists = true
+            }
+        })
+        if(!roomExists) return { msg: 'No rooms to print'}
+        const room = {
+            members: []
+        };
+        console.log(this.members)
+        console.log(this.rooms[roomIndex].room.members)
+        
+
+        return { msg: `${roomName} printed succesfully. Printed number of allocations is ${this.rooms.length}`}
     }
     
 }

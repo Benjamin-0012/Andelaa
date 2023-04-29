@@ -57,9 +57,15 @@ app.post('/add_person', (req, res) => {
 })
 
 app.post('/print_room/:roomName', (req, res) => {
-  print = dojo.printRoom(req.params.roomName);
-  res.send(print)
+  printroom = dojo.printRoom(req.params.roomName);
+  res.send(printroom)
+})
+
+app.post('/print_allocation', (req, res) => {
+  printallocation = dojo.printAllocation();
+  res.send(printallocation)
 })
 
 app.listen(port, () => {console.log(`Running on port: ${port}`)});
+
 
