@@ -149,6 +149,9 @@ class Dojo {
 
         return { msg: `${roomName} printed succesfully. Printed number of allocations is ${this.rooms.length}`}
     }
+    printUnallocated () {
+        
+    }
     
 }
 

@@ -66,6 +66,11 @@ app.post('/print_allocation', (req, res) => {
   res.send(printallocation)
 })
 
+app.post('/print_unallocated', (req, res) => {
+  printallocation = dojo.printUnallocated();
+  res.send(printUnallocated)
+})
+
 app.listen(port, () => {console.log(`Running on port: ${port}`)});
 
 
